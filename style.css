@@ -24,6 +24,7 @@ body {
     margin: 2rem auto;
     backdrop-filter: blur(10px);
     animation: slideIn 0.6s ease-out;
+    box-sizing: border-box;
 }
 
 @keyframes slideIn {
@@ -507,4 +508,355 @@ footer {
     margin-top: 1.5rem;
     color: #666;
     font-size: 0.95rem;
+}
+
+/* Responsive Design - Tablets & Small Devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+        border-radius: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin-top: 1.2rem;
+    }
+
+    .file-upload-area {
+        padding: 1.5rem;
+        margin-bottom: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .file-upload-area p {
+        font-size: 0.9rem;
+    }
+
+    .file-item {
+        padding: 0.6rem 0.8rem;
+        border-radius: 8px;
+        margin-bottom: 0.6rem;
+    }
+
+    .input-group {
+        padding: 0.8rem;
+        border-radius: 8px;
+        margin-bottom: 1.2rem;
+    }
+
+    .input-group label {
+        font-size: 0.95rem;
+    }
+
+    .input-group label[for] {
+        font-size: 0.9rem;
+        margin-right: 1rem;
+    }
+
+    button#merge-button,
+    a#download-link {
+        max-width: 100%;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        margin: 1rem auto 0;
+    }
+
+    .help-button {
+        width: 48px;
+        height: 48px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .help-modal-content {
+        max-width: 90vw;
+        border-radius: 15px;
+    }
+
+    .help-modal-header {
+        padding: 1.5rem;
+    }
+
+    .help-modal-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .help-modal-body {
+        padding: 1.5rem;
+    }
+
+    .help-step {
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .help-step h3 {
+        font-size: 1rem;
+    }
+
+    .help-step p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+        margin-top: 0.8rem;
+    }
+
+    .footer-links a {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-links svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+        margin: 0.4rem 0;
+    }
+}
+
+/* Responsive Design - Mobile Phones */
+@media (max-width: 480px) {
+    * {
+        transition: all 0.2s ease;
+    }
+
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        padding: 1rem;
+        margin: 0.75rem auto;
+        max-width: calc(100% - 1rem);
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+    }
+
+    header {
+        margin-bottom: 1.2rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin: 0 0 0.2rem 0;
+    }
+
+    header p {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.7rem;
+        margin-top: 0.9rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file-upload-area {
+        padding: 1rem;
+        margin-bottom: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .file-upload-area p {
+        font-size: 0.75rem;
+        margin: 0;
+    }
+
+    .file-upload-area:hover {
+        transform: none;
+    }
+
+    .file-upload-area.dragover {
+        transform: scale(1.01);
+    }
+
+    #file-list,
+    #insert-file-list {
+        margin-top: 0.6rem;
+    }
+
+    .file-item {
+        padding: 0.5rem;
+        margin-bottom: 0.4rem;
+        border-left-width: 3px;
+    }
+
+    .file-item span {
+        font-size: 0.8rem;
+    }
+
+    .file-item button {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .input-group {
+        padding: 0.6rem;
+        margin-bottom: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .input-group label {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .input-group input[type="radio"] {
+        width: 14px;
+        height: 14px;
+        margin-right: 0.3rem;
+    }
+
+    .input-group label[for] {
+        font-size: 0.8rem;
+        margin-right: 0.6rem;
+        display: inline-block;
+    }
+
+    button#merge-button,
+    a#download-link {
+        max-width: 100%;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        margin: 0.7rem auto 0;
+        box-sizing: border-box;
+    }
+
+    .help-button {
+        width: 44px;
+        height: 44px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .help-icon {
+        font-size: 1.5rem;
+    }
+
+    .help-modal {
+        padding: 0;
+    }
+
+    .help-modal-content {
+        max-width: 95%;
+        max-height: 85vh;
+        border-radius: 12px;
+        margin: auto;
+    }
+
+    .help-modal-header {
+        padding: 1rem 0.9rem;
+    }
+
+    .help-modal-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .close-button {
+        font-size: 1.5rem;
+        width: 32px;
+        height: 32px;
+    }
+
+    .help-modal-body {
+        padding: 1rem 0.9rem;
+    }
+
+    .help-step {
+        gap: 0.7rem;
+        margin-bottom: 0.9rem;
+        padding-bottom: 0.9rem;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    .help-step h3 {
+        font-size: 0.9rem;
+        margin: 0 0 0.3rem 0;
+    }
+
+    .help-step p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .help-info {
+        padding: 0.7rem;
+        margin-top: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    footer {
+        padding: 1rem 0.8rem;
+    }
+
+    .footer-content {
+        max-width: 100%;
+    }
+
+    .footer-content p {
+        font-size: 0.75rem;
+        margin: 0.2rem 0;
+    }
+
+    .footer-links {
+        gap: 0.7rem;
+        margin-top: 0.5rem;
+    }
+
+    .footer-links a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-links a:hover {
+        transform: translateY(-2px);
+    }
+
+    .footer-links svg {
+        width: 16px;
+        height: 16px;
+    }
 }
