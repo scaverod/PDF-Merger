@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Merger</h1>
+            <p>Add a cover or back page to your PDFs</p>
+        </header>
+        <main>
+                        <h3>Main PDFs</h3>
+                        <div class="file-upload-area" id="drop-zone">
+                            <p>Drag and drop your main PDFs here, or click to select files.</p>
+                            <input type="file" id="main-pdfs" multiple style="display: none;">
+                        </div>
+                        <div id="file-list"></div>
+            
+                                    <h3>PDF to Insert</h3>
+            
+                                    <div class="file-upload-area" id="insert-drop-zone">
+            
+                                        <p>Drag and drop your insert PDF here, or click to select a file.</p>
+            
+                                        <input type="file" id="insert-pdf" style="display: none;">
+            
+                                    </div>
+            
+                                    <div id="insert-file-list"></div>
+            
+                                    <div class="input-group">
+            
+                                        <label>Insert position:</label>
+            
+                                        <input type="radio" id="first-page" name="position" value="first" checked>
+            
+                                        <label for="first-page">First Page</label>
+            
+                                        <input type="radio" id="last-page" name="position" value="last">
+            
+                                        <label for="last-page">Last Page</label>
+            
+                                    </div>
+            <button id="merge-button" class="hidden">Merge PDFs</button>
+            <a id="download-link" style="display: none;"></a>
+        </main>
+    </div>
+    <footer>
+        <p>Created with ❤️ by Gemini</p>
+    </footer>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
