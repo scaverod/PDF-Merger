@@ -1,52 +1,108 @@
 # PDF Merger
 
-Una pequeña aplicación web (frontend) para: añadir una portada o contraportada a uno o varios PDFs y descargar los resultados empaquetados en un ZIP.
+A lightweight web application to add a cover or back page to one or multiple PDFs and download the results packaged as a ZIP file.
 
-Características
-- Arrastrar y soltar o seleccionar archivos PDF principales (múltiples).
-- Seleccionar un PDF para insertar como portada o contraportada.
-- Elegir si insertar la página(s) al inicio (First Page) o al final (Last Page) del PDF principal.
-- Genera un ZIP con todos los PDFs procesados listos para descargar.
+## Features
 
-Cómo funciona
-- Selecciona o arrastra uno o varios PDFs en la sección "Main PDFs".
-- Selecciona o arrastra un PDF en la sección "PDF to Insert" (la portada/contraportada).
-- Elige la posición de inserción: "First Page" o "Last Page".
-- Pulsa "Merge PDFs" y se generará un ZIP con los archivos resultantes para descargar.
+- 📁 **Drag-and-drop** or click to select multiple main PDFs
+- 📄 **Drag-and-drop** or click to select a single PDF to use as a cover or back page
+- 🔀 **Choose insertion position**: First Page or Last Page
+- 📦 **Batch processing**: Generate a ZIP file with all processed PDFs ready to download
+- ⚡ **Client-side processing**: All work happens in your browser—no uploads to external servers
 
-Demo / Capturas
-- El proyecto es una interfaz web simple contenida en `index.html` con estilos en `style.css` y la lógica en `script.js`.
+## How It Works
 
-Dependencias (en el navegador)
-- pdf-lib (incluido mediante CDN en `index.html`) — para manipular PDFs en el cliente.
-- JSZip (incluido mediante CDN en `index.html`) — para crear el ZIP de salida.
+1. Select or drag one or multiple PDFs into the **"Main PDFs"** section
+2. Select or drag a PDF into the **"PDF to Insert"** section (this will be your cover/back page)
+3. Choose the insertion position: **"First Page"** or **"Last Page"**
+4. Click **"Merge PDFs"** and download the ZIP file with your processed PDFs
 
-Instalación y ejecución local
-Este proyecto es estático y no requiere compilación: basta abrir `index.html` en un navegador moderno. Para evitar problemas con políticas de archivo en algunos navegadores, sirve la carpeta con un servidor local. Ejemplo usando Python 3:
+## Live Demo & Screenshots
+
+This is a simple web interface contained in a single `index.html` file with styling in `style.css` and logic in `script.js`. Open `index.html` in a modern browser to get started.
+
+## Dependencies
+
+The application uses two libraries loaded via CDN:
+
+- **[pdf-lib](https://pdf-lib.js.org/)** — JavaScript library for manipulating PDFs in the browser
+- **[JSZip](https://stuk.github.io/jszip/)** — JavaScript library for creating and reading ZIP files
+
+Both are included automatically in `index.html`.
+
+## Installation & Local Setup
+
+This is a static project with no build step required. To serve it locally and avoid browser file access restrictions, use a simple HTTP server:
+
+### Using Python 3
 
 ```bash
 python3 -m http.server 8000
-# Abrir en el navegador: http://localhost:8000
+# Then open http://localhost:8000 in your browser
 ```
 
-Uso recomendado
-- Usa archivos PDF no demasiado grandes (el procesamiento ocurre en el navegador y depende de la memoria disponible).
-- Si vas a procesar muchos PDFs o muy pesados, considera hacerlo por lotes.
+### Using Node.js
 
-Limitaciones y notas
-- Todo el trabajo se hace en el cliente (el navegador). No se sube nada a servidores externos.
-- El rendimiento y el máximo tamaño de archivo dependen de la memoria y el navegador del usuario.
-- No hay comprobaciones avanzadas de validez de PDFs: se asume que los archivos son PDFs válidos.
+```bash
+npx http-server
+```
 
-Contribuir
-- Abre issues o pull requests con mejoras o correcciones.
-- Para desarrollo, clona el repositorio, haz cambios y prueba abriendo `index.html` en un servidor local.
+### Using PHP
 
-Licencia
-- Añade un archivo `LICENSE` si quieres declarar una licencia. Por defecto, no hay licencia explícita en este repositorio.
+```bash
+php -S localhost:8000
+```
 
-Contacto
-- Si necesitas ayuda o quieres sugerir una mejora, abre un issue en este repositorio.
+## Usage Tips
 
---
-Generado y documentado para facilitar el uso de la aplicación web de fusión de PDFs.
+- **File size**: Works best with reasonably sized PDFs. Processing happens in the browser, so performance depends on available memory.
+- **Batch processing**: For very large or many files, consider processing them in smaller batches.
+- **Browser compatibility**: Works in modern browsers that support ES6 and the File API.
+
+## Limitations & Notes
+
+- **Client-side only**: All processing happens in your browser. No data is sent to external servers.
+- **Performance**: Maximum file size and performance depend on your browser and available system memory.
+- **PDF validation**: The app assumes uploaded files are valid PDFs. Invalid files may produce unexpected results.
+- **Single cover/back page**: Currently, each batch can only use one PDF as the cover/back page across all main PDFs.
+
+## Contributing
+
+We welcome contributions! If you'd like to improve PDF Merger:
+
+1. **Fork** this repository
+2. **Create a feature branch**: `git checkout -b feature/your-feature-name`
+3. **Make your changes** and test them locally
+4. **Commit with a clear message**: `git commit -m "Add feature description"`
+5. **Push to your fork**: `git push origin feature/your-feature-name`
+6. **Open a Pull Request** and describe your changes
+
+### Ideas for Contributions
+
+- Add support for inserting a page at any position (not just first/last)
+- Implement compression options for the generated ZIP
+- Add support for batch processing with different covers per file
+- Improve error handling and user feedback
+- Add keyboard shortcuts or other UX improvements
+- Write unit tests
+- Add multi-language support
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE). Feel free to use it in your projects!
+
+## Support & Feedback
+
+If you encounter any issues or have suggestions:
+
+- 🐛 **Report a bug**: Open an issue and describe what went wrong
+- 💡 **Suggest a feature**: Open an issue with your idea and why it would be useful
+- 💬 **Ask a question**: Check existing issues first, then open a new one
+
+## About
+
+Created with ❤️ for anyone who needs to batch-process PDFs in the browser.
+
+---
+
+**Happy merging!** 🚀

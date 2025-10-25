@@ -6,9 +6,35 @@ const dropZone = document.getElementById('drop-zone');
 const fileList = document.getElementById('file-list');
 const insertDropZone = document.getElementById('insert-drop-zone');
 const insertFileList = document.getElementById('insert-file-list');
+const helpButton = document.getElementById('help-button');
+const helpModal = document.getElementById('help-modal');
+const closeHelpButton = document.getElementById('close-help');
 
 let mainPdfFiles = [];
 let insertPdfFile = null;
+
+// Help modal event listeners
+helpButton.addEventListener('click', () => {
+    helpModal.classList.remove('hidden');
+});
+
+closeHelpButton.addEventListener('click', () => {
+    helpModal.classList.add('hidden');
+});
+
+// Close modal when clicking outside of it
+helpModal.addEventListener('click', (e) => {
+    if (e.target === helpModal) {
+        helpModal.classList.add('hidden');
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !helpModal.classList.contains('hidden')) {
+        helpModal.classList.add('hidden');
+    }
+});
 
 // Handle file selection from input
 mainPdfsInput.addEventListener('change', () => {
@@ -73,7 +99,7 @@ function setInsertFile(file) {
     if (file.type === 'application/pdf') {
         insertPdfFile = file;
         renderInsertFileList();
-        insertDropZone.classList.add('hidden');
+        insertDropZone.style.display = 'none';
         checkMergeButtonVisibility();
     }
 }
@@ -117,7 +143,7 @@ insertFileList.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON' && e.target.dataset.role === 'remove-insert') {
         insertPdfFile = null;
         renderInsertFileList();
-        insertDropZone.classList.remove('hidden');
+        insertDropZone.style.display = 'block';
         checkMergeButtonVisibility();
     }
 });
